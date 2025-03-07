@@ -15,8 +15,8 @@ weather_map = {1: "Cerah", 2: "Mendung", 3: "Hujan/Salju Ringan", 4: "Hujan Leba
 # Fungsi Load Data
 @st.cache_data
 def load_data():
-    days = pd.read_csv("fxf28/projek-analisis-data-1/main/dashboard/days_processed.csv", parse_dates=["date"])
-    hours = pd.read_csv("fxf28/projek-analisis-data-1/main/dashboard/hours_processed.csv", parse_dates=["date"])
+    days = pd.read_csv("github.com/Fxf28/projek-analisis-data-1/tree/main/dashboard/days_processed.csv", parse_dates=["date"])
+    hours = pd.read_csv("github.com/Fxf28/projek-analisis-data-1/tree/main/dashboard/hours_processed.csv", parse_dates=["date"])
 
     # Preprocessing untuk data harian
     days["season"] = days["season_code"].map(season_map)
