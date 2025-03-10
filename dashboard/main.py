@@ -17,7 +17,7 @@ weather_map = {1: "Cerah", 2: "Mendung", 3: "Hujan/Salju Ringan", 4: "Hujan Leba
 def load_data():
     days_url = "https://raw.githubusercontent.com/Fxf28/projek-analisis-data-1/main/dashboard/days_processed.csv"
     hours_url = "https://raw.githubusercontent.com/Fxf28/projek-analisis-data-1/main/dashboard/hours_processed.csv"
-    
+
     days = pd.read_csv(days_url, parse_dates=["date"])
     hours = pd.read_csv(hours_url, parse_dates=["date"])
 
@@ -151,13 +151,15 @@ with tab2:
 
     # Plot utama: Pola Penyewaan per Jam
     st.subheader("Pola Penyewaan per Jam")
+    hours_df["workingday"] = days_df["workingday"].astype(str)
+    workingday_palette = {"1": "blue", "0": "red"}
     fig, ax = plt.subplots(figsize=(12, 6))
     sns.lineplot(
         data=hours_df,
         x="hour",
         y="total_rentals",
         hue="workingday",
-        palette="Set1",
+        palette=workingday_palette,
         ax=ax
     )
     ax.set_xticks(range(0, 24))
