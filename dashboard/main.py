@@ -151,7 +151,8 @@ with tab2:
 
     # Plot utama: Pola Penyewaan per Jam
     st.subheader("Pola Penyewaan per Jam")
-    workingday_palette = {True: "blue", False: "red"}
+    hours_df["workingday"] = hours_df["workingday"].astype(str)
+    workingday_palette = {"Hari Kerja": "blue", "Hari Libur": "red"}
     fig, ax = plt.subplots(figsize=(12, 6))
     sns.lineplot(
         data=hours_df,
