@@ -21,3 +21,6 @@ jupyter-notebook .
 cd dashboard
 streamlit run main.py
 ```
+
+## Streamlit cloud link
+https://fxf28project.streamlit.app/
